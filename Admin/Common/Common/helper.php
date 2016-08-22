@@ -7,15 +7,20 @@
  * @return string
  */
 function activedLink($controller_name, $action_name, $style) {
+	$arr = explode('-',$controller_name);
+	//	$controller_name = $arr[0];
     if (isset($action_name)
         && (false !== strpos($controller_name, CONTROLLER_NAME))
         && ACTION_NAME == $action_name) {
         return $style;
     }
 
-    if (!isset($action_name)
-        && (false !== strpos($controller_name, CONTROLLER_NAME))) {
-        return $style;
+    if (!isset($action_name)){
+    		foreach($arr as $v){
+    			if($v === CONTROLLER_NAME){
+    				return $style;
+    			}
+    		}
     }
 
     return '';

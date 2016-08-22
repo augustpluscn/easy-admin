@@ -200,6 +200,7 @@ class CommonController extends Controller {
             if (isset($menuItem['mapping'])) {
                 // 映射名
                 $mapping = $menuItem['mapping'];
+				$mappingName = $mapping;
                 // 新的菜单键值
                 if (!empty($mapped[$mapping])) {
                     $key = "{$mapped[$mapping]}-{$key}";
@@ -213,7 +214,7 @@ class CommonController extends Controller {
                     $mainMenu[$key]['name'] = $mainMenu[$mapping]['name'];
                     $mainMenu[$key]['target'] = $mainMenu[$mapping]['target'];
                     unset($mainMenu[$mapping]);
-                    $mapped[$mapping] = $key;
+                    $mapped[$mappingName] = $key;
                 }
 
                 continue ;
