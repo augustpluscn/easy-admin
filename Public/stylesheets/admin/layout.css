@@ -237,3 +237,7 @@ html, body {
     color:#b9ddff;
     display:block;
 }
+
+#Left li a.current {
+    color:yellow;
+}

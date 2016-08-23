@@ -27,6 +27,21 @@ function activedLink($controller_name, $action_name, $style) {
 }
 
 /**
+ * 为当前所在左侧菜单项样式
+ * @param  string $controller_name
+ * @param  string $style
+ * @return string
+ */
+function activedLeftLink($link, $style) {
+	$arr = explode('/',$link);
+    if ( CONTROLLER_NAME == $arr[0] && ACTION_NAME == $arr[1]) {
+        return $style;
+    }
+	
+    return '';
+}
+
+/**
  * 得到gravatar头像
  * @param  string $email
  * @return string
