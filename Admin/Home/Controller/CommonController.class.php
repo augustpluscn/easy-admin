@@ -332,6 +332,19 @@ class CommonController extends Controller {
 
         return $this->ajaxReturn($json);
     }
+	
+	/**
+     * 返回带有recode、json数据
+     * @param  boolean $recode
+     * @param  string $info
+     * @return
+     */
+    protected function returnInfo($recode, $info) {
+        $json['recode'] = $recode;
+        $json['info'] = $info;
+
+        return $this->ajaxReturn($json);
+    }
 
     /**
      * 下载文件
